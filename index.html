@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clase completa de JavaScript</title>
+  <meta name="description" content="Documento educativo autocontenible para aprender JavaScript desde cero">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ==============================
+       ESTILOS MÍNIMOS (solo soporte visual)
+       ============================== -->
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      background: #f4f6f8;
+      color: #111;
+    }
+
+    header, section, footer {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    button {
+      padding: .6rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    code {
+      background: #111;
+      color: #eee;
+      padding: .2em .4em;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #111;
+      color: #eee;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+
+    .output {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #e5e7eb;
+      border-radius: 6px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>JavaScript: lógica, eventos y comportamiento</h1>
+  <p>
+    Este documento es una <strong>clase completa de JavaScript</strong>.
+    No enseña diseño ni estructura visual: enseña <strong>comportamiento,
+    lógica y tiempo</strong>.
+  </p>
+  <p>
+    Todo el código JavaScript está contenido en este archivo y se ejecuta
+    directamente en el navegador.
+  </p>
+</header>
+
+<main>
+
+  <!-- ==============================
+       1. VARIABLES Y TIPOS
+       ============================== -->
+  <section>
+    <h2>1. Variables y tipos de datos</h2>
+
+    <p>
+      JavaScript trabaja con <strong>valores</strong> y <strong>referencias</strong>.
+      El tipo pertenece al valor, no a la variable.
+    </p>
+
+    <pre>
+let numero = 42;
+let texto = "Hola mundo";
+let activo = true;
+let indefinido;
+let vacio = null;
+    </pre>
+
+    <button id="btnTipos">Mostrar tipos en consola</button>
+
+    <div class="output" id="outTipos"></div>
+  </section>
+
+  <!-- ==============================
+       2. FUNCIONES
+       ============================== -->
+  <section>
+    <h2>2. Funciones</h2>
+
+    <p>
+      Las funciones describen <strong>comportamientos reutilizables</strong>.
+      En JavaScript son ciudadanos de primera clase.
+    </p>
+
+    <pre>
+function saludar(nombre) {
+  return "Hola " + nombre;
+}
+    </pre>
+
+    <button id="btnSaludar">Ejecutar función</button>
+
+    <div class="output" id="outSaludo"></div>
+  </section>
+
+  <!-- ==============================
+       3. CONDICIONES
+       ============================== -->
+  <section>
+    <h2>3. Condiciones</h2>
+
+    <p>
+      Las estructuras condicionales permiten tomar decisiones lógicas.
+    </p>
+
+    <pre>
+let edad = 18;
+
+if (edad >= 18) {
+  acceso = "Permitido";
+} else {
+  acceso = "Denegado";
+}
+    </pre>
+
+    <button id="btnCondicion">Evaluar condición</button>
+
+    <div class="output" id="outCondicion"></div>
+  </section>
+
+  <!-- ==============================
+       4. BUCLES
+       ============================== -->
+  <section>
+    <h2>4. Bucles</h2>
+
+    <p>
+      Los bucles permiten repetir procesos de forma controlada.
+    </p>
+
+    <pre>
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+    </pre>
+
+    <button id="btnBucle">Ejecutar bucle</button>
+
+    <div class="output" id="outBucle"></div>
+  </section>
+
+  <!-- ==============================
+       5. EVENTOS
+       ============================== -->
+  <section>
+    <h2>5. Eventos</h2>
+
+    <p>
+      JavaScript reacciona a eventos producidos por el entorno
+      (clics, teclas, tiempo, etc.).
+    </p>
+
+    <button id="btnEvento">Hacer clic</button>
+
+    <div class="output" id="outEvento"></div>
+  </section>
+
+  <!-- ==============================
+       6. TIEMPO Y ASINCRONÍA
+       ============================== -->
+  <section>
+    <h2>6. Tiempo y asincronía</h2>
+
+    <p>
+      JavaScript no bloquea el flujo principal. Usa un modelo basado
+      en eventos y cola de tareas.
+    </p>
+
+    <pre>
+setTimeout(() => {
+  console.log("Esto ocurre después");
+}, 2000);
+    </pre>
+
+    <button id="btnTiempo">Iniciar temporizador</button>
+
+    <div class="output" id="outTiempo"></div>
+  </section>
+
+  <!-- ==============================
+       7. DOM (INTERACCIÓN CON EL DOCUMENTO)
+       ============================== -->
+  <section>
+    <h2>7. Manipulación del DOM</h2>
+
+    <p>
+      JavaScript puede leer y modificar el <abbr title="Document Object Model">DOM</abbr>,
+      que es el modelo en memoria del documento HTML.
+    </p>
+
+    <button id="btnDom">Cambiar este texto</button>
+
+    <div class="output" id="outDom">
+      Texto original del DOM
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 — Documento educativo de JavaScript</p>
+</footer>
+
+<!-- ==============================
+     JAVASCRIPT AUTOCONTENIDO
+     ============================== -->
+<script>
+  /* ==============================
+     1. VARIABLES Y TIPOS
+     ============================== */
+  document.getElementById("btnTipos").addEventListener("click", () => {
+    let numero = 42;
+    let texto = "Hola mundo";
+    let activo = true;
+
+    const resultado =
+      typeof numero + ", " +
+      typeof texto + ", " +
+      typeof activo;
+
+    console.log(resultado);
+    document.getElementById("outTipos").textContent = resultado;
+  });
+
+  /* ==============================
+     2. FUNCIONES
+     ============================== */
+  function saludar(nombre) {
+    return "Hola " + nombre;
+  }
+
+  document.getElementById("btnSaludar").addEventListener("click", () => {
+    document.getElementById("outSaludo").textContent = saludar("JavaScript");
+  });
+
+  /* ==============================
+     3. CONDICIONES
+     ============================== */
+  document.getElementById("btnCondicion").addEventListener("click", () => {
+    let edad = 18;
+    let mensaje = edad >= 18 ? "Acceso permitido" : "Acceso denegado";
+    document.getElementById("outCondicion").textContent = mensaje;
+  });
+
+  /* ==============================
+     4. BUCLES
+     ============================== */
+  document.getElementById("btnBucle").addEventListener("click", () => {
+    let salida = "";
+    for (let i = 1; i <= 5; i++) {
+      salida += i + " ";
+    }
+    document.getElementById("outBucle").textContent = salida;
+  });
+
+  /* ==============================
+     5. EVENTOS
+     ============================== */
+  document.getElementById("btnEvento").addEventListener("click", () => {
+    document.getElementById("outEvento").textContent =
+      "Evento de clic detectado";
+  });
+
+  /* ==============================
+     6. TIEMPO
+     ============================== */
+  document.getElementById("btnTiempo").addEventListener("click", () => {
+    document.getElementById("outTiempo").textContent =
+      "Esperando 2 segundos...";
+    setTimeout(() => {
+      document.getElementById("outTiempo").textContent =
+        "Tiempo cumplido";
+    }, 2000);
+  });
+
+  /* ==============================
+     7. DOM
+     ============================== */
+  document.getElementById("btnDom").addEventListener("click", () => {
+    document.getElementById("outDom").textContent =
+      "El DOM fue modificado por JavaScript";
+  });
+</script>
+
+</body>
+</html>
